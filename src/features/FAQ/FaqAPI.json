@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "question" : "C'est quoi The Toad'o List ?",
+        "answer" : "The Toad'o List est une application de gestion de tâches pensée pour être simple, efficace et un peu rigolote. Inspirée du monde des batraciens, elle vous aide à organiser vos missions du quotidien — sans vous laisser couler comme une grenouille dans l'eau chaude."
+    },
+    {
+        "id": 2,
+        "question" : "Puis-je organiser mes tâches par catégorie ?",
+        "answer" : "Oui ! Vous pouvez créer des listes thématiques pour regrouper vos tâches : travail, personnel, projets... Chaque liste est votre propre mare, à vous de choisir quelles grenouilles y vivent."
+    },
+    {
+        "id": 3,
+        "question" : "Pourquoi des grenouilles ? C'est un peu bizarre, non ?",
+        "answer" : "Peut-être, mais les grenouilles sont de vraies championnes de l'organisation ! Elles savent exactement quand sauter, quand attendre, et ne ratent jamais une mouche. On a trouvé ça inspirant. Et puis, un poco de fantaisie rend les tâches un peu moins redoutables."
+    },
+    {
+        "id": 4,
+        "question" : "L'application est-elle gratuite ?",
+        "answer" : "The Toad'o List est entièrement gratuite dans sa version de base. Toutes les fonctionnalités essentielles sont accessibles sans créer de compte. Une version premium avec des grenouilles exclusives et des fonctions avancées est prévue prochainement."
+    },
+    {
+        "id": 5,
+        "question" : "Mes tâches sont-elles sauvegardées si je ferme l'onglet ?",
+        "answer" : "Oui, vos tâches sont sauvegardées automatiquement. Pas de panique si votre ordinateur fait le mort comme une grenouille — tout sera là à votre retour, fidèle au poste."
+    }
+   
+]

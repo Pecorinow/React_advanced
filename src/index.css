@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@import "./theme.css";
+
+#root {
+  @apply font-quicksand-r min-h-screen flex flex-col;
+    /* min-h-screen =  */
+}
+
+main {
+  @apply h-full grow p-4;
+  /* grow = permet au main de prendre minimum toute la hauteur de l'écran */
+}
+
+/* Style Header */
+header {
+    a {
+        @apply 
+        text-main-800 
+        underline 
+        decoration-transparent 
+        decoration-3 
+        underline-offset-8  
+        hover:decoration-secondary-600 
+        transition duration-150 ease-in-out;
+    }
+
+    a:active {
+      @apply text-secondary-600
+    }
+}
+
+.btn {
+    @apply 
+    bg-secondary-600
+    text-main-50
+    py-2
+    px-4
+    rounded-lg
+    no-underline
+    outline-2
+    outline-transparent
+    hover:outline-secondary-600
+    hover:bg-transparent
+    hover:text-secondary-600
+
+}
+
+.btn-2 {
+    @apply 
+    bg-main-600
+    text-main-50
+    py-2
+    px-4
+    rounded-lg
+    no-underline
+    outline-2
+    outline-transparent
+    hover:outline-main-600
+    hover:bg-transparent
+    hover:text-main-600
+
+}
