@@ -10,7 +10,7 @@ export const About = () => {
                    <AboutCard
                         title="L'initiative"
                         text={[
-                            "Développeuse le jour, collectionneuse de grenouilles en peluche le reste du temps — et désorganisée en permanence. Si vous avez déjà retrouvé votre liste de courses dans vos notes de réunion, on va bien s'entendre.",
+                            "Développeuse le jour, collectionneuse de grenouilles la nuit — et désorganisée en permanence. Si vous avez déjà retrouvé votre liste de courses dans vos notes de réunion, on va bien s'entendre.",
                             "L'idée de The Toad'o List est née d'un constat simple : on a de plus en plus de choses à faire, de moins en moins de temps pour les faire, et quelque part entre les deux, on oublie de souffler un peu. Les applications de gestion de tâches existantes sont souvent froides, austères, culpabilisantes. Elles vous rappellent ce que vous n'avez pas fait sans jamais vous féliciter d'avoir survécu à votre journée.",
                             "Moi je voulais quelque chose de différent. Un outil qui soit vraiment utile, sans se prendre au sérieux. Parce qu'une grenouille sur un nénuphar, ça ne stresse pas. Ça attend le bon moment, ça saute quand il faut, et entre les deux, ça profite du soleil.",
                             "The Toad'o List, c'est ça : une façon de s'organiser qui laisse de la place pour rigoler."
