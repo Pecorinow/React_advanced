@@ -1,12 +1,23 @@
 import {useId} from 'react';
 import { useNavigate } from 'react-router';
 import { authService } from '../../../services/auth.service';
+import { useAtom } from "jotai";
+import {tokenAtom} from '../../../atoms/auth.atom';
 
 export const LoginForm = () => {
 
     const id = useId();
 
-     const navigate = useNavigate();
+    const navigate = useNavigate();
+
+    // * State management :
+    // Pour que le header affiche ou non les boutons de connexion, il doit savoir si on est déjà connecté ou non. Pour ça, on va utiliser le token récupéré dans auth.service.js, le stocker le temps de la connexion, et s'en débarrasser lors de la déconnexion. Donc :
+        // Si le token est stocké => la valeur de tokenAtom est celle du token de connexion => on est connecté, pas de bouton de connexion nécesaire.
+        // Si pas de token stocké => la valeur de tokenatom est null => on est déconnecté, afficher les boutons de connexion.
+    // 1. Stocker le token (récupéré dans auth.service.js) lors du login dans le LoginForm.jsx :
+    const [token, setToken] = useAtom(tokenAtom);
+    // Ou :
+    // const setToken = useAtom(tokenAtom);
 
     const handleRegisterSubmit = async (formData) => {
         console.log(formData);
@@ -15,14 +26,19 @@ export const LoginForm = () => {
 
         console.log('Data', data);
 
-        const response = await authService.login(data);
+        const token = await authService.login(data);
 
-        console.log(response);
-            // => Response contient les infos de l'user tels que présentés dans la DB dans Insomnia, dans Auth -> Login : id, firstname, lastname, token.
-
+        console.log(token);
+            // => token contient les infos de l'user tels que présentés dans la DB dans Insomnia, dans Auth -> Login : id, firstname, lastname, token.
         
+        //2. On stocke le token dans le localstorage, pour rester connecté en cas de refresh :
+        localStorage.setItem('token', token);
 
-        navigate('/');
+        // 3. Le useAtom est mis à jour, et sa valeur passe de (null) à (response.data.token) :
+        setToken(token);
+            // = stocke le token dans l'atom.
+
+        navigate('/tasks');
     }
 
     return (
@@ -31,13 +47,13 @@ export const LoginForm = () => {
              <div>
                 <div className='flex flex-col justify-center gap-1'>
                     <label htmlFor={id + 'email'}>Email</label>
-                    <input id={id + 'email'} type='text' name="email" className='outline-2 p-1 rounded-md outline-secondary-600 hover:bg-secondary-50 target:bg-secondary-50'></input>
+                    <input id={id + 'email'} type='text' name="email" className='input-form'></input>
                 </div>
 
 
                 <div className='flex flex-col justify-center gap-1'>
                     <label htmlFor={id + 'password'}>Mot de passe</label>
-                    <input id={id + 'password'} type='password' name="password" className='outline-1 p-1 rounded-md'></input>
+                    <input id={id + 'password'} type='password' name="password" className='input-form'></input>
                 </div>
 
                 <div>

@@ -1,6 +1,15 @@
-import { NavLink } from "react-router"
+import { NavLink } from "react-router";
+import { useAtom } from "jotai";
+import {tokenAtom} from '../../atoms/auth.atom';
+import { BtnLogout } from "../../features/auth/components/BtnLogout";
+
 
 export const Header = ()=> {
+
+    // Lire l'atom dans le Header :
+    const [token] = useAtom(tokenAtom);
+        // tokenAtom possède la valeur de l'atom, à savoir soit null, soit response.date.token.
+
     return (
         <header className="flex justify-between py-4 px-8 bg-secondary-100">
             <div className="flex items-center gap-4">
@@ -28,13 +37,24 @@ export const Header = ()=> {
                         <NavLink to="/about">About</NavLink>
                     </li>
 
-                    <li>
-                        <NavLink className="btn" to="/auth/login">Me Connecter</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className="btn-2" to="/auth/register">Créer un compte</NavLink>
-                    </li>
                     
+                    {!token &&
+                        // Si pas de token stocké => afficher les boutons de connexion :
+                        <>
+                            <li>
+                                <NavLink className="btn" to="/auth/login">Me Connecter</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="btn-2" to="/auth/register">Créer un compte</NavLink>
+                            </li>
+                        </>
+                    }
+
+                    
+                    {token &&
+                        // Si token stocké => bouton déconnexion :
+                        <BtnLogout/> // Sous forme de composant pour ne faire le re-rendu que de ce composant-là.
+                    }
                 </ul>
             </nav>
         </header>

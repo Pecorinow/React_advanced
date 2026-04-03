@@ -61,3 +61,16 @@ header {
     hover:text-main-600
 
 }
+
+.input-form {
+  @apply 
+  outline-2 p-1 
+  rounded-md 
+  outline-secondary-600 
+  hover:bg-secondary-50 
+  target:bg-secondary-50
+}
+
+/* .label-form {
+  @apply 
+} */

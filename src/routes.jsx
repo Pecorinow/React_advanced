@@ -8,6 +8,7 @@ import { TaskDetails } from './features/tasks/pages/TaskDetails.jsx'
 import { TaskHome } from './features/tasks/pages/TaskHome.jsx'
 import { Home } from './layout/pages/Home.jsx'
 import { NotFound } from './layout/pages/NotFound.jsx'
+import { ProtectedPage } from './features/auth/components/PageProtected.jsx'
 
 
 /**
@@ -36,7 +37,8 @@ export const routes = [
                 // = une route dont le dernier élément sera variable
             {
                 path:'task/:id',
-                element : <TaskDetails/>
+                element : <ProtectedPage> <TaskDetails/> </ProtectedPage>
+                // Composant TaskDetails est protégé par le ProtectedPage tant qu'on n'est pas connecté.
             },
             
             {

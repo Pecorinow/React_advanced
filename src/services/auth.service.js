@@ -13,7 +13,7 @@ export const authService = {
         return response.data;
     },
 
-    login: async (userData) => {
+    login: async ({email, password}) => {
         const response = await axios.post("http://localhost:3000/api/auth/login", {email, password});
             // {email, password} = destructuring de userData. Même résultat que userData, mais au lieu d'un objet userData qui contient email et password, on obtiendra deux objets : email et password.
             

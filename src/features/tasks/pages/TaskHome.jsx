@@ -1,4 +1,5 @@
 import { NavLink } from "react-router"
+import { TaskUserSelector } from "../components/TaskUserSelector"
 
 export const TaskHome = () => {
     return (
@@ -21,6 +22,9 @@ export const TaskHome = () => {
                 <NavLink  to="/task/3">
                     Détails tâche 3
                 </NavLink>
+
+                {/* TODO : tester que le TaskUserSelector  */}
+                <TaskUserSelector/>
             </section>
         </>
     )
