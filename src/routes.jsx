@@ -1,6 +1,7 @@
 import App from './App.jsx'
 import { About } from './features/about/About.jsx'
 import { Register } from './features/auth/pages/Register.jsx'
+import {Login} from './features/auth/pages/Login.jsx'
 import { FAQ } from './features/FAQ/Faq.jsx'
 // import { FAQCard } from './features/FAQ/FaqCard.jsx'
 import { TaskDetails } from './features/tasks/pages/TaskDetails.jsx'
@@ -56,6 +57,10 @@ export const routes = [
                     {
                         path: 'register',
                         element: <Register/>
+                    },
+                    {
+                        path: 'login',
+                        element: <Login/>
                     }
                 ]
             },
